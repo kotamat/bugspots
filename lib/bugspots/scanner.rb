@@ -5,7 +5,7 @@ module Bugspots
   Spot = Struct.new(:file, :score)
 
   def self.scan(repo, branch = "master", depth = nil, regex = nil)
-    regex ||= /\b(fix(es|ed)?|close(s|d)?)\b/i
+    regex ||= /\b(fix(es|ed)?|close(s|d)?|バグ|修正|bug)\b/i
     fixes = []
 
     repo = Rugged::Repository.new(repo)
